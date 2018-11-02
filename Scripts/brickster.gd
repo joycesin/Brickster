@@ -17,3 +17,5 @@ func _physics_process(delta):
             print("Collided with ball")
             get_node("collision").disabled = true;
             get_node("Sprite").visible = false;
+            get_node("monster/CollisionShape2D").disabled = false;
+            get_node("monster/Sprite").visible = true;
