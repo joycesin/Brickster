@@ -1,6 +1,7 @@
 # Brick-Breaker-X-Space-Invaders
 Break bricks and kill off space invaders!
 Brick Breaker x Space Invaders game:
+
 Objective: Clear all bricks/monsters on the screen
 
 Description: You deflect a moving ball on the screen towards the arrangement of bricks to clear them. When you hit a brick, it may transform into a monster, and you have to shoot it before it reaches you. 
