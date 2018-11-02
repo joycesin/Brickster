@@ -4,7 +4,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "textvar"
 var screensize
-export (int) var speed = 400  # How fast the player will move (pixels/sec).
+export (int) var speed = 300  # How fast the player will move (pixels/sec).
 var paddleWidth
 var paddleHeight
 
