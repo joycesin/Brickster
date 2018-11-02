@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Paddle.gd" type="Script" id=1]
 [ext_resource path="res://Textures/bar.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Textures/ball.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/brickster.gd" type="Script" id=5]
 [ext_resource path="res://Textures/brick.png" type="Texture" id=6]
+[ext_resource path="res://Textures/monster.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -18,6 +19,11 @@ custom_solver_bias = 0.0
 radius = 6.5
 
 [sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
@@ -114,7 +120,6 @@ polygon = PoolVector2Array( 0, 608, 1024, 608, 1024, 640, 0, 640 )
 "bricks",
 ]]
 
-editor/display_folded = true
 position = Vector2( 544, 64 )
 input_pickable = false
 collision_layer = 1
@@ -136,9 +141,6 @@ angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="Bricksters/brickster0" index="0"]
 
@@ -153,7 +155,7 @@ scale = Vector2( 3.2, 1.5999 )
 shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Bricksters/brickster0" index="2"]
+[node name="monster" type="KinematicBody2D" parent="Bricksters/brickster0" index="2"]
 
 position = Vector2( 0.2005, 1.2 )
 input_pickable = false
@@ -161,106 +163,16 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 
-[node name="brickster2" type="RigidBody2D" parent="Bricksters" index="1" groups=[
-"bricks",
-]]
+[node name="Sprite" type="Sprite" parent="Bricksters/brickster0/monster" index="0"]
 
-editor/display_folded = true
-position = Vector2( 640, 64 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 3
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 0.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 1
-contact_monitor = true
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Bricksters/brickster2" index="0"]
-
-scale = Vector2( 0.5, 0.75 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform", "Visibility" ]
-
-[node name="collision" type="CollisionShape2D" parent="Bricksters/brickster2" index="1"]
-
-position = Vector2( 4.76837e-06, -1.43051e-06 )
-scale = Vector2( 3.2, 1.5999 )
-shape = SubResource( 4 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Bricksters/brickster2" index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricksters/brickster0/monster" index="1"]
 
-position = Vector2( 0.2005, 1.2 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-
-[node name="brickster1" type="RigidBody2D" parent="Bricksters" index="2" groups=[
-"bricks",
-]]
-
-editor/display_folded = true
-position = Vector2( 448, 64 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 3
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 0.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 1
-contact_monitor = true
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-script = ExtResource( 5 )
+scale = Vector2( 3.1, 2.2 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Bricksters/brickster1" index="0"]
-
-scale = Vector2( 0.5, 0.75 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform", "Visibility" ]
-
-[node name="collision" type="CollisionShape2D" parent="Bricksters/brickster1" index="1"]
-
-position = Vector2( 4.76837e-06, -1.43051e-06 )
-scale = Vector2( 3.2, 1.5999 )
-shape = SubResource( 4 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Bricksters/brickster1" index="2"]
-
-position = Vector2( 0.2005, 1.2 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
 
 
